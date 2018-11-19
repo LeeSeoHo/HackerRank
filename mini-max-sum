@@ -1,26 +1,27 @@
 void miniMaxSum(int arr_count, int* arr) {
-        int min = arr[1];
-        int max = arr[1];
-        int sum_min = 0;
-        int sum_max = 0;
 
-        for(int i = 0;i<arr_count;i++) {
-                if(min > arr[i]) {
-                        min = arr[i];
-                }
-                if(max < arr[i]) {
-                        max = arr[i];
-                }
-        }
+        long long int min = arr[1];
+        long long int max = arr[1];
+	long long int sum_min = 0;
+	long long int sum_max = 0;
 
-        for(int j=0;j<arr_count;j++) {
-                sum_min += arr[j];
-                sum_max += arr[j];
-        }
+	for (int i = 0; i < arr_count; i++) {
+		if (min > arr[i]) {
+			min = arr[i];
+		}
+		if (max < arr[i]) {
+			max = arr[i];
+		}
+	}
 
-        sum_max -= min;
-        sum_min -= max;
+	for (int j = 0; j<arr_count; j++) {
+		sum_min += arr[j];
+		sum_max += arr[j];
+	}
 
-        printf("%d %d\n", sum_min, sum_max);
+	sum_max -= min;
+	sum_min -= max;
+
+	printf("%lld %lld\n", sum_min, sum_max);
 
 }
