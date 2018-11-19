@@ -1,0 +1,26 @@
+void miniMaxSum(int arr_count, int* arr) {
+        int min = arr[1];
+        int max = arr[1];
+        int sum_min = 0;
+        int sum_max = 0;
+
+        for(int i = 0;i<arr_count;i++) {
+                if(min > arr[i]) {
+                        min = arr[i];
+                }
+                if(max < arr[i]) {
+                        max = arr[i];
+                }
+        }
+
+        for(int j=0;j<arr_count;j++) {
+                sum_min += arr[j];
+                sum_max += arr[j];
+        }
+
+        sum_max -= min;
+        sum_min -= max;
+
+        printf("%d %d\n", sum_min, sum_max);
+
+}
