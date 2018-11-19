@@ -17,8 +17,8 @@ void miniMaxSum(int arr_count, int* arr) {
 	for (int j = 0; j<arr_count; j++) {
 		sum_min += arr[j];
 		sum_max += arr[j];
-	}
-
+		}
+		
 	sum_max -= min;
 	sum_min -= max;
 
