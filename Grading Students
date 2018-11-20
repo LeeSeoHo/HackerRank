@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+        int student;
+        int *score;
+        scanf("%d", &student);
+
+        score = (int*)malloc(sizeof(int)*student);
+
+        for(int i=0;i<student;i++) {
+            scanf("%d", &score[i]);
+        }
+
+        for(int i=0;i<student;i++) {
+            if(score[i]%5 >= 3 && score[i] >= 38) {
+                if(score[i]%5 == 3) {
+                    score[i] += 2;
+                }
+                else {
+                    score[i] += 1;
+                }
+            }
+        }
+
+        for (int i = 0; i < student; i++) {
+          printf("%d\n",score[i]);
+        }
+
+        return 0;
+}
