@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+
+        int s,t,a,b,m,n;
+
+        scanf("%d %d %d %d %d %d", &s, &t, &a, &b, &m, &n);
+
+        int *apple, *orange;
+
+        apple = (int*)malloc(sizeof(int)*m);
+        orange = (int*)malloc(sizeof(int)*n);
+
+        for(int i=0;i<m;i++) {
+                scanf("%d", &apple[i]);
+        }
+        for(int j=0;j<n;j++) {
+                scanf("%d", &orange[j]);
+        }
+
+        int apple_cnt=0;
+        int orange_cnt=0;
+
+        for(int i=0;i<m;i++) {
+                apple[i] += a;
+                if(apple[i] >= s && apple[i] <=t) {
+                        apple_cnt++;
+                }
+        }
+        for(int j=0;j<n;j++) {
+                 orange[j] += b;
+                if(orange[j] >= s && orange[j] <=t) {
+                        orange_cnt++;
+                }
+        }
+
+        printf("%d\n", apple_cnt);
+        printf("%d\n", orange_cnt);
+
+        return 0;
+}
