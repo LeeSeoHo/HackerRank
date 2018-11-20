@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+        int score_cnt;
+        int *score;
+
+        scanf("%d", &score_cnt);
+        score = (int*)malloc(sizeof(int)*score_cnt);
+
+        for(int i=0;i<score_cnt;i++) {
+                scanf("%d",&score[i]);
+        }
+
+        int max = score[0];
+        int min = score[0];
+        int max_cnt=0;
+        int min_cnt=0;
+
+        for(int j=1;j<score_cnt;j++) {
+                if(score[j] < min) {
+                        min = score[j];
+                        min_cnt++;
+                }
+                if(max < score[j]) {
+                        max = score[j];
+                        max_cnt++;
+                }
+        }
+
+        printf("%d %d\n", max_cnt, min_cnt);
+
+        return 0;
+}
+
