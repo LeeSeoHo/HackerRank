@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+        int num;
+        int total;
+        int *ar;
+        int cnt = 0;
+
+        scanf("%d %d", &num, &total);
+
+        ar = (int*)malloc(sizeof(int)*num);
+
+        for(int i=0;i<num;i++) {
+                scanf("%d", &ar[i]);
+        }
+
+        for(int i=0;i<num-1;i++) {
+                for(int j=i+1;j<num;j++) {
+                        if((ar[i] + ar[j]) % total == 0) {
+                                cnt++;
+                        }
+                }
+        }
+
+        printf("%d\n", cnt);
+
+        return 0;
+}
