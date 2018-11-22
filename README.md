@@ -7,6 +7,6 @@ solving algorithms &amp; data structure
 
 https://www.hackerrank.com/
 
-2018-11-19 : 6 codes
+2018-11-19 : 7 codes
 
-2018-11-20 : 6 codes
+2018-11-20 : 7 codes
