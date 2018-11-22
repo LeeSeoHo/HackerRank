@@ -1,0 +1,13 @@
+int pageCount(int n, int p) {
+
+	int l = p / 2;
+	int r = (n / 2) - l;
+
+	int ans = l;
+
+	if (l > r) {
+		ans = r;
+	}
+
+	return ans;
+}
