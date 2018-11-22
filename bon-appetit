@@ -1,0 +1,19 @@
+void bonAppetit(int bill_count, int* bill, int k, int b) {
+        int sum=0;
+
+        for(int i=0;i<bill_count;i++) {
+                sum += bill[i];
+        }
+        sum -= bill[k];
+        if(sum / 2 == b) {
+                printf("Bon Appetit\n");       
+        }
+        else {
+                if((sum/2)-b < 0) {
+                        printf("%d\n", b - (sum/2));
+                }
+                else {
+                        printf("%d\n", (sum/2) - b);
+                }
+        }
+}
