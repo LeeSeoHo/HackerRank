@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int day_back(int year);
+
+int main() {
+
+  int year;
+
+  scanf("%d", &year);
+
+  printf("%d.09.%d\n", day_back(year), year);
+
+  return 0;
+}
+
+int day_back(int year) {
+
+  int day = 13;
+
+  if (year == 1918) {
+    day = 26;
+  } else if (((year <= 1917) & (year % 4 == 0)) ||
+             ((year > 1918) &
+              (year % 400 == 0 || ((year % 4 == 0) & (year % 100 != 0))))) {
+    day = 12;
+  } else if (year % 400 == 0) {
+    day = 12;
+  }
+  return day;
+}
