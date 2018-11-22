@@ -1,18 +1,19 @@
 int countingValleys(int n, char* s) {
 
         int height = 0;
+        int sea = 0;
 
         for(int i=0;i<n;i++) {
                 if(s[i] == 'U') {
                         height +=1;
+                        
                 }
                 else if(s[i] == 'D') {
                         height -= 1;
                 }
-                if (height == 0 && s[i]== 'U') {
-                  ++height;
+                if (height == 0 && s[i] == 'U') {
+                  ++sea;
                 }
-        }      
-
-        return height;
+        }
+        return sea;
 }
