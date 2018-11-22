@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+  int bird;
+  scanf("%d", &bird);
+
+  int *mig;
+  int cnt[6] = {0, };
+
+  mig = (int *)malloc(sizeof(int) * bird);
+
+  int max = 0;
+  int min = 5;
+
+  for (int i = 0; i < bird; i++) {
+    scanf("%d", &mig[i]);
+  }
+
+  for (int k = 0; k < bird; k++) {
+    for (int l = 0; l < 6; l++) {
+      if (mig[k] == l) {
+        cnt[l]++;
+      }
+    }
+  }
+
+  for (int i = 0; i < 6; i++) {
+    if (max < cnt[i]) {
+      max = cnt[i];
+    }
+  }
+
+  for (int k = 0; k < 6; k++) {
+    if (cnt[k] == max) {
+      if (min >= k) {
+        min = k;
+      }
+    }
+  }
+
+  printf("%d\n", min);
+
+  return 0;
+}
