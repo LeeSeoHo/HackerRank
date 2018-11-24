@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+  int b, n, m;
+
+  scanf("%d %d %d", &b, &n, &m);
+
+  int *keyboard;
+  int *drives;
+
+  keyboard = (int *)malloc(sizeof(int) * n);
+  drives = (int *)malloc(sizeof(int) * m);
+
+  for (int i = 0; i < n; i++) {
+    scanf("%d", &keyboard[i]);
+  }
+
+  for (int j = 0; j < m; j++) {
+    scanf("%d", &drives[j]);
+  }
+
+  int max = -1;
+
+  for (int k = 0; k < n; k++) {
+    for (int l = 0; l < m; l++) {
+      if (keyboard[k] + drives[l] <= b) {
+        if (max < keyboard[k] + drives[l]) {
+          max = keyboard[k] + drives[l];
+        }
+      }
+    }
+  }
+
+  printf("%d", max);
+
+  return 0;
+}
