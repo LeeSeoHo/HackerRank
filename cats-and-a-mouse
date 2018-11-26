@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int absolute(int x, int y);
+
+int main() {
+
+	int q;
+	int x, y, z;
+	int c_m[3] = { 0, };
+
+	scanf("%d", &q);
+
+	for (int i = 0; i < q; i++) {
+
+		for (int i = 0; i < 3; i++) {
+			scanf("%d", &c_m[i]);
+		}
+
+		x = c_m[0];
+		y = c_m[1];
+		z = c_m[2];
+
+
+		if (absolute(z, y) == absolute(z, x)) {
+			printf("Mouse C\n");
+		}
+		else if (absolute(z, y) > absolute(z, x)) {
+			printf("Cat A\n");
+		}
+		else if (absolute(z, y) < absolute(z, x)) {
+			printf("Cat B\n");
+		}
+	}
+	
+	return 0;
+}
+
+int absolute(int x, int y) {
+	if (x - y < 0) {
+		return y - x;
+	}
+	else {
+		return x - y;
+	}
+}
